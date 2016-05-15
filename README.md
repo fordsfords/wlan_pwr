@@ -52,18 +52,23 @@ These instructions assume you are in a shell prompt on CHIP.
 2. Verify that power management is turned on:
 
         /sbin/iwconfig wlan0
+
 You should see the line:
+
         Power Management:on
 
-3. Get the shell script file onto CHIP:
+3. Get the shell script file onto CHIP and reboot:
 
-        sudo wget -O/etc/network/if-up.d/wla_pwr http://fordsfords.github.io/wlan_pwr/wlan_pwr
+        sudo wget -O/etc/network/if-up.d/wlan_pwr http://fordsfords.github.io/wlan_pwr/wlan_pwr
         sudo chmod +x /etc/network/if-up.d/wlan_pwr
+        sudo shutdown -r
 
-3. Test the package.  Wait for CHIP to finish booting, and log back in.  Then:
+4. Test the package.  Wait for CHIP to finish booting, and log back in.  Then:
 
         /sbin/iwconfig wlan0
+
 You should see the line:
+
         Power Management:off
 
 ## Release Notes
