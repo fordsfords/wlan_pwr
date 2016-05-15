@@ -1,0 +1,28 @@
+#! /bin/sh
+# Improve CHIP's wireless performance by turning off power management.
+
+set -e
+
+# Don't bother for loopback
+if [ "$IFACE" = lo ]; then
+	exit 0
+fi
+
+# Only run from ifup.
+if [ "$MODE" != start ]; then
+	exit 0
+fi
+
+# Only do it once (skip for inet6).
+if [ "$ADDRFAM" != inet ]; then
+	exit 0
+fi
+
+# Hopefully wireless-tools is installed
+if [ ! -x /sbin/iwconfig ]; then
+	exit 0
+fi
+
+iwconfig $IFACE power off
+
+exit 0
