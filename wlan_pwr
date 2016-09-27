@@ -23,6 +23,6 @@ if [ ! -x /sbin/iwconfig ]; then
 	exit 0
 fi
 
-iwconfig $IFACE power off
+/sbin/iwconfig $IFACE power off
 
 exit 0
