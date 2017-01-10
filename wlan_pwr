@@ -19,10 +19,10 @@ if [ "$ADDRFAM" != inet ]; then
 fi
 
 # Hopefully wireless-tools is installed
-if [ ! -x /sbin/iwconfig ]; then
+if [ ! -x /sbin/iw ]; then
 	exit 0
 fi
 
-/sbin/iwconfig $IFACE power off
+/sbin/iw dev $IFACE set power_save off
 
 exit 0
