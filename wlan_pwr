@@ -24,6 +24,6 @@ if [ ! -x /sbin/iw ]; then
 	exit 0
 fi
 
-/sbin/iw dev wlan0 set power_save off
+/sbin/iw dev $IFACE set power_save off
 
 exit 0
