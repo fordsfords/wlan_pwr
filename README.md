@@ -73,6 +73,10 @@ These instructions assume you are in a shell prompt on CHIP.
 
 ## Release Notes
 
+* 11-Feb-2017
+
+    Changed iwconfig to iw.
+
 * 15-May-2016
 
     Initial release.
