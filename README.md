@@ -45,17 +45,17 @@ Note: the "gh-pages" branch is considered to be the current stable release.  The
 
 These instructions assume you are in a shell prompt on CHIP.
 
-1. Get the prerequisit Linux package.
+1. Get the prerequisite Linux package.
 
-        sudo apt-get install wireless-tools
+        sudo apt-get install iw
 
 2. Verify that power management is turned on:
 
-        /sbin/iwconfig wlan0
+        /sbin/iw dev wlan0 get power_save
 
     You should see the line:
 
-        Power Management:on
+        Power save: on
 
 3. Get the shell script file onto CHIP and reboot:
 
@@ -65,11 +65,11 @@ These instructions assume you are in a shell prompt on CHIP.
 
 4. Test the package.  Wait for CHIP to finish booting, and log back in.  Then:
 
-        /sbin/iwconfig wlan0
+        /sbin/iw dev wlan0 get power_save
 
     You should see the line:
 
-        Power Management:off
+        Power save: off
 
 ## Release Notes
 
